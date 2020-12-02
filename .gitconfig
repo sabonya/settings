@@ -7,6 +7,10 @@
 	autocrlf = input
 	excludesfile = ~/.gitignore
 	quotepath = false
+[fetch]
+    prune = true
+[pull]
+    prune = true
 [push]
 	default = current
 [credential]
