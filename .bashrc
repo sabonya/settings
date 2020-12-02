@@ -112,5 +112,35 @@ if ! shopt -oq posix; then
   fi
 fi
 
+## 20201202
+
+HISTTIMEFORMAT='%Y-%m-%dT%T%z '
+export HISTCONTROL=ignoredups
+function share_history {
+    history -a
+    history -c
+    history -r
+}
+PROMPT_COMMAND='share_history'
+shopt -u histappend
+export HISTSIZE=20000
+
+export PATH="$HOME/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias gf='git foresta'
+alias gfh='git foresta | head'
+alias relogin='exec $SHELL -l'
+
+# [「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】 - Qiita](https://qiita.com/varmil/items/9b0aeafa85975474e9b6 "「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】 - Qiita")
+source ~/bin/.git-completion.bash
+source ~/bin/.git-prompt.sh
+# プロンプトに各種情報を表示
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM=1
+GIT_PS1_SHOWUNTRACKEDFILES=
+GIT_PS1_SHOWSTASHSTATE=1
+export EIF=$(for DEV in `find /sys/devices -name net 2>/dev/null | grep -v virtual`; do ls $DEV/; done | head -1)
+export IP=$(ip addr show dev $EIF | grep "inet " | cut -d" " -f6)
+export PS1='\[\033[1;32m\]\u@\h:$IP\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
