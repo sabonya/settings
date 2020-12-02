@@ -5,7 +5,7 @@
 	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
 [core]
 	autocrlf = input
-	excludesfile = ~/gitignore_global.txt
+	excludesfile = ~/.gitignore
 	quotepath = false
 [push]
 	default = current

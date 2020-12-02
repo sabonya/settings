@@ -21,3 +21,20 @@ Thumbs.db
 *.vspscc
 *_i.c
 *_p.c
+
+## 20201202
+wd
+wk
+
+*bak
+*bk
+*wk
+*work
+*~
+~*
+.git
+.svn
+log
+logs
+tags
+vendor
