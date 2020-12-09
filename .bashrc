@@ -125,7 +125,7 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 export HISTSIZE=20000
 
-export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.anyenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.anyenv/bin:$PATH:./vendor/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
