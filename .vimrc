@@ -6,7 +6,6 @@ highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
 set ambiwidth=double
 set bg=dark
-set laststatus=2
 set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
 "set statusline=%{GetEFstatus()}
 
@@ -41,12 +40,15 @@ set visualbell
 " 括弧入力時の対応する括弧を表示
 set showmatch
 " ステータスラインを常に表示
-"set laststatus=2
+set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
+" シンタックスハイライトの有効化
+syntax enable
+
 
 " Tab系
 " 不可視文字を可視化(タブが「?-」と表示される)
@@ -136,6 +138,11 @@ map <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
+
+"[vimで方向キーがABCDを入力してしまう問題の解決 - Qiita](https://qiita.com/blue_camel/items/e2bd59a3b33acd5edfd0)
+
+set nocompatible
+set backspace=indent,eol,start
 
 " * [Vimでパターン検索するなら知っておいたほうがいいこと - derisの日記](http://deris.hatenablog.jp/entry/2013/05/15/024932
 nnoremap /  /\v
