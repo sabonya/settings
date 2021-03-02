@@ -139,3 +139,7 @@ map <silent> [Tag]p :tabprevious<CR>
 
 " * [Vimでパターン検索するなら知っておいたほうがいいこと - derisの日記](http://deris.hatenablog.jp/entry/2013/05/15/024932
 nnoremap /  /\v
+
+" * ['set relativenumber' で Vim のカーソルの縦移動とかを改善する - 反省はしても後悔はしない](http://cohama.hateblo.jp/entry/2013/10/07/020453)
+nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
+
