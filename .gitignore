@@ -38,3 +38,7 @@ log
 logs
 tags
 vendor
+packages
+__py_cache__
+node_modules
+.tmp

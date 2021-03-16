@@ -1,0 +1,103 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+* {
+  font-family: "MeiryoKe_PGothic", "Meiryo", "MeiryoKe_Gothic", sans-serif;
+  /* !important; */
+  /* "IPA モナー ゴシック Regular","Consolas", "Ricty Diminished" */
+}
+
+a:visited {
+  color: red;
+}
+
+
+/* * [小田嶋隆の「ア・ピース・オブ・警句」 ～世間に転がる意味不明：日経ビジネス電子版](https://business.nikkei.com/article/life/20081022/174784/) */
+
+@-moz-document domain("business.nikkei.com") {
+  .creationList .specialCreationListItem .creationListContent h3.moveIcon, .creationList .specialCreationListItem .creationListContent h3, .creationList .creationListItem .creationListContent .creationListTitle h3 {
+    color: unset;
+  }
+  #wrapper>header, .headerFix>header {
+    visibility: hidden;
+  }
+}
+
+
+/* * [アメリカの低金利と、著書の出版中断 - ストレスフリーの資産運用　by　林敬一（債券投資の専門家）](https://blog.goo.ne.jp/keihayashi1218/e/b3a7999a6079b6cd055569a96b993b27) */
+
+@-moz-document domain("blog.goo.ne.jp") {
+  .module a:visited {
+    color: red;
+  }
+}
+
+@-moz-document domain("wikipedia.org") {
+  a.new {
+    color: darkgreen;
+  }
+}
+
+/* * [行政書類 | 中沢克之(第62代鎌倉市議会議長)　オフィシャルブログ「雨洗風磨」Powered by Ameba](https://ameblo.jp/nakazawakatsuyuki/entry-12017305222.html) */
+@-moz-document domain("ameblo.jp") {
+  /*
+  .skin-btnPaging {
+    color: unset;
+  }
+  .skin-btnPaging a:visited {
+    color: red;
+  }
+  */
+  /* html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea ul.skin-paging li a.skin-pagingNext.skin-btnPaging.ga-pagingEntryNextTop, 
+  html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea ul.skin-paging li a.skin-pagingPrev.skin-btnPaging.ga-pagingEntryPrevTop */
+  html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea a:visited
+  {
+    color: red;
+  }
+}
+
+
+/* #mw-content-text > div.mw-parser-output > p:nth-child(10) > a:nth-child(4) */
+
+#mw-content-text>a:visited {
+  color: red;
+}
+
+@-moz-document domain("minorikou.blog.jp") {
+  #gdpr-banner {
+    display: none;
+  }
+}
+@-moz-document domain("karapaia.com") {
+  #gdpr-banner, #overlay {
+    display: none;
+  }
+}
+
+@-moz-document domain("blog.livedoor.jp") {
+  #gdpr-banner, #overlay {
+    display: none;
+  }
+}
+
+@-moz-document domain("note.com") {
+  .o-navbarNoteDetail {
+    display: none;
+  }
+}
+
+@-moz-document domain("togetter.com") {
+  .fixed {
+    display: none;
+  }
+}
+
+@-moz-document domain("twitter.com") {
+  .r-gtdqiz {
+    display: none;
+  }
+}
+
+@-moz-document domain("www.bbc.com") {
+  .css-xsszq2-ConsentBannerWrapper {
+    display: none;
+  }
+}

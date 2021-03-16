@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -74,7 +76,12 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    if [[ -r ~/.dircolors ]]
+    then
+      eval "$(dircolors -b ~/.dircolors)"
+    else
+      eval "$(dircolors -b)"
+    fi
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -125,7 +132,7 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 export HISTSIZE=20000
 
-export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.anyenv/bin:$PATH:./vendor/bin"
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.anyenv/bin:$PATH:./vendor/bin:$HOME/node_modules/.bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -141,8 +148,11 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=
 GIT_PS1_SHOWSTASHSTATE=1
-export EIF=$(for DEV in `find /sys/devices -name net 2>/dev/null | grep -v virtual`; do ls $DEV/; done | head -1)
-export IP=$(ip addr show dev $EIF | grep "inet " | cut -d" " -f6)
+EIF=$(for DEV in $(find /sys/devices -name net 2>/dev/null | grep -v virtual); do ls "$DEV"/; done | head -1)
+export EIF
+IP=$(ip addr show dev "$EIF" | grep "inet " | cut -d" " -f6)
+export IP
 export PS1='\[\033[1;32m\]\u@\h:$IP\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 [[ $(type -P anyenv) ]] && eval "$(anyenv init -)"
 [[ $(type -P gh) ]] && eval "$(gh completion -s bash)"
+export LESS=-FINMRX
