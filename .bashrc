@@ -18,8 +18,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# HISTSIZE=10000
+# HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -130,7 +130,9 @@ function share_history {
 }
 PROMPT_COMMAND='share_history'
 shopt -u histappend
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=20000
+export HISTFILESIZE=20000
 
 export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.anyenv/bin:$PATH:./vendor/bin:$HOME/node_modules/.bin"
 
@@ -156,3 +158,15 @@ export PS1='\[\033[1;32m\]\u@\h:$IP\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(
 [[ $(type -P anyenv) ]] && eval "$(anyenv init -)"
 [[ $(type -P gh) ]] && eval "$(gh completion -s bash)"
 export LESS=-FINMRX
+
+function svg2png {
+  fn=$1;
+  if [ -f "$fn" ]; then
+    # inkscape -z -e "$(${fn}|sed 's/\.[^\.]*$//').png" -h 1024 "$fn"
+    inkscape -z -e "$(${fn}|sed 's/\.[^\.]*$//').png" "$fn"
+  else
+    echo "$fn not found."
+  fi
+}
+# time svg2png wk/Challenge_of_Amaterashu_and_Susanoo.sv
+# time svg2png wk/Challenge_of_Amaterashu_and_Susanoo.svg

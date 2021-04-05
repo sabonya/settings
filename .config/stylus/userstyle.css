@@ -6,6 +6,11 @@
   /* "IPA モナー ゴシック Regular","Consolas", "Ricty Diminished" */
 }
 
+/* ::-webkit-scrollbar, */
+body:not(.style-scope)[themed-scrollbar]:not(.style-scope):not([no-y-overflow]):not(.style-scope)::-webkit-scrollbar {
+  width: 14px;
+}
+
 a:visited {
   color: red;
 }
@@ -14,20 +19,32 @@ a:visited {
   display: none;
 }
 
-/* * [小田嶋隆の「ア・ピース・オブ・警句」 ～世間に転がる意味不明：日経ビジネス電子版](https://business.nikkei.com/article/life/20081022/174784/) */
+@-moz-document domain("ja.wikipedia.org") {
+  a {
+    background: #eee;
+  }
 
+  a.new {
+    background: pink;
+  }
+}
+
+/* * [小田嶋隆の「ア・ピース・オブ・警句」 ～世間に転がる意味不明：日経ビジネス電子版](https://business.nikkei.com/article/life/20081022/174784/) */
 @-moz-document domain("business.nikkei.com") {
-  .creationList .specialCreationListItem .creationListContent h3.moveIcon, .creationList .specialCreationListItem .creationListContent h3, .creationList .creationListItem .creationListContent .creationListTitle h3 {
+  .creationList .specialCreationListItem .creationListContent h3.moveIcon,
+  .creationList .specialCreationListItem .creationListContent h3,
+  .creationList .creationListItem .creationListContent .creationListTitle h3 {
     color: unset;
   }
-  #wrapper>header, .headerFix>header {
+
+  #wrapper>header,
+  .headerFix>header {
     visibility: hidden;
   }
 }
 
 
 /* * [アメリカの低金利と、著書の出版中断 - ストレスフリーの資産運用　by　林敬一（債券投資の専門家）](https://blog.goo.ne.jp/keihayashi1218/e/b3a7999a6079b6cd055569a96b993b27) */
-
 @-moz-document domain("blog.goo.ne.jp") {
   .module a:visited {
     color: red;
@@ -52,8 +69,7 @@ a:visited {
   */
   /* html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea ul.skin-paging li a.skin-pagingNext.skin-btnPaging.ga-pagingEntryNextTop, 
   html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea ul.skin-paging li a.skin-pagingPrev.skin-btnPaging.ga-pagingEntryPrevTop */
-  html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea a:visited
-  {
+  html.columnC.fixed body.skin-columnC div#app div.skin-page div.skin-blogBody div.skin-blogBodyInner div#primary div#main.skin-blogMain.skinMainArea a:visited {
     color: red;
   }
 }
@@ -66,13 +82,15 @@ a:visited {
 }
 
 @-moz-document domain("karapaia.com") {
-  #gdpr-banner, #overlay {
+  #gdpr-banner,
+  #overlay {
     display: none;
   }
 }
 
 @-moz-document domain("blog.livedoor.jp") {
-  #gdpr-banner, #overlay {
+  #gdpr-banner,
+  #overlay {
     display: none;
   }
 }
@@ -108,7 +126,17 @@ a:visited {
 }
 
 @-moz-document domain("www.youtube.com") {
-  #movie_player > div.ytp-chrome-bottom > div.ytp-chrome-controls > div.ytp-right-controls > button.ytp-fullscreen-button.ytp-button
+#movie_player>div.ytp-chrome-bottom>div.ytp-chrome-controls>div.ytp-right-controls>button.ytp-miniplayer-button.ytp-button,
+  #movie_player>div.ytp-chrome-bottom>div.ytp-chrome-controls>div.ytp-right-controls>button.ytp-size-button.ytp-button,
+  #movie_player>div.ytp-chrome-bottom>div.ytp-chrome-controls>div.ytp-right-controls>button.ytp-fullscreen-button.ytp-button {
+    /* display: none; */
+    visibility: hidden;
+  }
+}
+
+@-moz-document domain("togetter.com") {
+  #fixed_social_footer > div.left,
+  #fixed_social_footer > div.right {
     display: none;
   }
 }
