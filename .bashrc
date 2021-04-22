@@ -134,8 +134,10 @@ shopt -u histappend
 export HISTSIZE=20000
 export HISTFILESIZE=20000
 
-export PATH="$HOME/.local/bin:$HOME/bin:$HOME/.anyenv/bin:$PATH:./vendor/bin:$HOME/node_modules/.bin"
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH:./vendor/bin:$HOME/node_modules/.bin"
+export PATH="$HOME/.anyenv/bin:$PATH"
 
+# shellcheck disable=SC1090
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias gf='git foresta'
@@ -143,7 +145,9 @@ alias gfh='git foresta | head'
 alias relogin='exec $SHELL -l'
 
 # [「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】 - Qiita](https://qiita.com/varmil/items/9b0aeafa85975474e9b6 "「Git補完をしらない」「git statusを1日100回は使う」そんなあなたに朗報【git-completionとgit-prompt】 - Qiita")
+# shellcheck disable=SC1090
 [ -f ~/bin/.git-completion.bash ] && source ~/bin/.git-completion.bash
+# shellcheck disable=SC1090
 [ -f ~/bin/.git-prompt.sh ] && source ~/bin/.git-prompt.sh
 # プロンプトに各種情報を表示
 GIT_PS1_SHOWDIRTYSTATE=1
