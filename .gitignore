@@ -42,3 +42,6 @@ packages
 __pycache__
 node_modules
 .tmp
+
+## 20211005
+.DS_Store
