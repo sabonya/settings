@@ -18,6 +18,8 @@
 	helper = store
 
 [url "git@github.com:"]
-	pushinsteadof = https://github.com/
+	# pushinsteadof = https://github.com/
+	InsteadOf = https://github.com/
+	InsteadOf = git@github.com:
 [pull]
 	rebase = false
